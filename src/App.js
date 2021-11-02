@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Video from "./pages/Video";
 import './style.css';
 import 'bootstrap';
+import WatchLater from "./pages/WatchLater";
 function App() {
   const state = useSelector((state) => {
     return {
@@ -30,6 +31,7 @@ function App() {
 
         <Switch>
               <Route path="/video/:id" component={Video} />
+              <Route path="/later" component={WatchLater} />
               <Route path="/" component={Home} />
         </Switch>
       </div>

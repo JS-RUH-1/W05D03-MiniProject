@@ -2,11 +2,12 @@
 import { createStore, combineReducers } from "redux";
 // 2. import the reducer from its file location.
 import darkReducer from "./darkmode";
-
+import watchLaterReducer from "./watch_later";
 
 // 3. Define a variable called "reducers", we will use to store all the reducer functions with the combineReducers method.
 const reducers = combineReducers({ 
-    dark: darkReducer
+    dark: darkReducer,
+    watchLater: watchLaterReducer
 });
 // 4. Declare a variable called "store" and set it equal the method "createStore" and pass the reducers variable as a value as you invoque it.
 const store = createStore(reducers);

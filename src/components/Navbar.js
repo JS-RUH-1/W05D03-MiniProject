@@ -24,6 +24,9 @@ export default function Navbar() {
           <li class="nav-item">
             <Link class="nav-link" to="/">Home</Link>
           </li>
+          <li class="nav-item">
+            <Link class="nav-link" to="/later">Watch Later</Link>
+          </li>
 
         </ul>
         <ul class="navbar-nav">
