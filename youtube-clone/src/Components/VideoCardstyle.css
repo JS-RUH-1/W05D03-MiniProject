@@ -1,0 +1,27 @@
+.videoCard {
+  margin-bottom: 40px;
+  width: 270px;
+  display: grid;
+  /* right: 0;
+     flex-direction: row;
+    flex-wrap: wrap; */
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  gap: 15px;
+}
+.videoCard__info {
+  display: flex;
+}
+.sidebarRow__icon{
+    margin-left: 10px; 
+    font-size: large;
+}
+
+.sidebarRow__icon:hover{
+    background-color: lightgray;
+   
+    cursor: pointer; 
+     color: red;
+}
+
