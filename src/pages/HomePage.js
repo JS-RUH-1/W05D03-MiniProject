@@ -11,7 +11,7 @@ function HomePage() {
   useEffect(() => {
     axios
       .get(
-        "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&chart=mostPopular&key=AIzaSyBbfY3O287NtkwIYZ2hGEtI9MTGHJ_SyBc"
+        "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&chart=mostPopular&regionCode=SA&key=AIzaSyBbfY3O287NtkwIYZ2hGEtI9MTGHJ_SyBc"
       )
       .then((send) => {
         console.log(send.data);

@@ -24,12 +24,13 @@
   color: rgb(80, 80, 80);
 }
 .search {
+  width: 50%;
   display: flex;
   justify-content: center;
   border: solid 1px rgb(170, 170, 170);
 }
 .searchVal {
-  width: 500px;
+  width: 100%;
   padding: 5px;
   border-radius: 0px;
   border: 0px;
@@ -44,3 +45,23 @@
   border: solid 0px rgb(170, 170, 170);
   border-left: solid 1px rgb(170, 170, 170);
 }
+/* @media screen and (max-width: 400px) {
+  .searchVal {
+    width: 100px;
+  }
+}
+@media screen and (min-width: 401px) and (max-width: 600px) {
+  .searchVal {
+    width: 200px;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 800px) {
+  .searchVal {
+    width: 300px;
+  }
+}
+@media screen and (min-width: 801px) and (max-width: 1000px) {
+  .searchVal {
+    width: 500px;
+  }
+} */
