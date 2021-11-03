@@ -8,19 +8,19 @@ import "./HomePage-module.css";
 //  YOUTUBE KYE API:  AIzaSyC7HGHC32cr7MU1z-f6bitnPCNjlcmaocQ
 function HomePage() {
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&chart=mostPopular&key=AIzaSyBbfY3O287NtkwIYZ2hGEtI9MTGHJ_SyBc"
-  //     )
-  //     .then((send) => {
-  //       console.log(send.data);
-  //       dispatch(addVideos(send.data.items));
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(
+        "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&chart=mostPopular&key=AIzaSyBbfY3O287NtkwIYZ2hGEtI9MTGHJ_SyBc"
+      )
+      .then((send) => {
+        console.log(send.data);
+        dispatch(addVideos(send.data.items));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <div>
