@@ -1,0 +1,26 @@
+.datailsPage {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  padding-left: 100px;
+  padding-bottom: 0;
+  text-align: left;
+  flex: 0.8;
+}
+
+.datailsPage > h2 {
+  text-align: center;
+  margin-left: 5px;
+  margin-bottom: 20px;
+}
+.Video__title {
+  text-align: left !important;
+}
+.datailsPage__desc {
+  text-align: left;
+  margin-left: 5px;
+
+  width: 900px;
+  border-top: 1px solid rgba(0, 0, 0, 0.404);
+  padding: 1%;
+  margin-bottom: 40px;
+}

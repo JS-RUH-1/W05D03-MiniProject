@@ -1,9 +1,12 @@
+.sidebar {
+  flex: 0.2;
+}
 .sidebarRow {
   display: flex;
   align-items: center;
   flex-direction: row;
   padding: 10px 20px;
-   text-decoration: none !important;
+  text-decoration: none !important;
 }
 .sidebarRow__icon {
   color: #606060;

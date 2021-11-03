@@ -24,7 +24,7 @@ function Header() {
   useEffect(() => {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${inputSearch}&key=AIzaSyA5bYtXu769t0qDPwoFGKCX8QzzBrhiDww`
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${inputSearch}&key=AIzaSyAZC9t72MsarQiSZ1sn-UmPjUnuDn72H68`
       )
       .then((res) => {
         console.log(res.data.items);

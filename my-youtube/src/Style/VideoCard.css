@@ -27,9 +27,16 @@
 }
 
 .videoCard__info__Watch__Later__btn {
-  color: #f6f6f6;
+  color: lightblue;
   margin-left: 50%;
+  border: none;
+}
+.videoCard__info__Watch__Later__btn:active {
+  color: black;
 }
 .WatchLater__red {
   color: red;
+}
+.videoCard__info__Watch__Later__div {
+  background-color: transparent !important;
 }

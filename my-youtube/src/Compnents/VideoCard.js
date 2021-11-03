@@ -46,29 +46,26 @@ export default function VideoCard({ video }) {
 
       <div className="videoCard__info">
         <div className="video__text">
-          <h4>
-            <Link
-              onClick={() => {
-                addDetails(video);
-              }}
-              to={`/detilas/${video.id.videoId}`}
-            >
-              {" "}
-              {video.snippet.title}{" "}
-            </Link>
-          </h4>
+          <Link
+            onClick={() => {
+              addDetails(video);
+            }}
+            to={`/detilas/${video.id.videoId}`}
+          >
+            {" "}
+            {video.snippet.title}{" "}
+          </Link>
           <p>{video.snippet.channelTitle}</p>
         </div>
-        <div className="videoCard__info__Watch__Later__btn">
-          <Link to={"/watchlater"}>
-            <button
-              onClick={() => {
-                checkExist(video);
-              }}
-            >
-              <WatchLater />
-            </button>
-          </Link>
+        <div className="videoCard__info__Watch__Later__div">
+          <button
+            className="videoCard__info__Watch__Later__btn"
+            onClick={() => {
+              checkExist(video);
+            }}
+          >
+            <WatchLater />
+          </button>
         </div>
       </div>
     </div>

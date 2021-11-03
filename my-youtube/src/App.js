@@ -32,7 +32,7 @@ function App() {
   useEffect(() => {
     axios
       .get(
-        "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&chart=mostPopular&key=AIzaSyA5bYtXu769t0qDPwoFGKCX8QzzBrhiDww"
+        "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&chart=mostPopular&key=AIzaSyAZC9t72MsarQiSZ1sn-UmPjUnuDn72H68"
       )
       .then((res) => {
         console.log(res.data.items);
@@ -48,12 +48,13 @@ function App() {
       <Router>
         <Header />
         <Switch>
-        <Route path="/detilas/:videoId">
-        <div className="App__grid">
-          <Sidebar />
-          <DetailsPage />
-        </div>
-      </Route>
+          <Route path="/detilas/:videoId">
+            <div className="App__grid">
+              <Sidebar />
+              <DetailsPage />
+              <RecommendeVideos />
+            </div>
+          </Route>
           <Route path="/search/:searchTerm">
             <div className="App__grid">
               <Sidebar />
