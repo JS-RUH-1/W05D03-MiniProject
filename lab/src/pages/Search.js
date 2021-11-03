@@ -66,7 +66,9 @@ function Search() {
                   }}
                 >
                   {" "}
-                  <MdOutlineWatchLater color="white" />
+                  <Link to="/watchedLater">
+                    <MdOutlineWatchLater color="white" />
+                  </Link>
                 </button>
               </div>
             </div>
