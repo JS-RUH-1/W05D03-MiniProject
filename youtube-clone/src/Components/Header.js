@@ -7,37 +7,36 @@ import VideoCallIcon from "@mui/icons-material/VideoCall";
 import AppsIcon from "@mui/icons-material/Apps";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import Avatar from "@mui/material/Avatar";
-import {BrowserRouter as Router , Switch, Route,Link} from "react-router-dom";
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function Header() {
-
-  const [inputSearch,setInputSearch] = useState('');
+  const [inputSearch, setInputSearch] = useState("");
   return (
-    // <Router> 
+    // <Router>
 
     <div className="header">
       <div className="header__left">
         <MenuIcon />
-        <Link exact to ="/">
-        <img
-          className="header__logo"
-          src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg"
-          alt=""
-          width="100"
-        /></Link>
+        <Link exact to="/">
+          <img
+            className="header__logo"
+            src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg"
+            alt=""
+            width="100"
+          />
+        </Link>
       </div>
       <div className="header__input">
         <input
-         onChange={e => setInputSearch(e.target.value)} 
-         value={inputSearch} 
-         placeholder=" Search" 
-         type="text" />
+          onChange={(e) => setInputSearch(e.target.value)}
+          value={inputSearch}
+          placeholder=" Search"
+          type="text"
+        />
 
-        <Link to={`/search/${inputSearch}`} >
-        <SearchIcon className="header__inputButton"/>
+        <Link to={`/search/${inputSearch}`}>
+          <SearchIcon className="header__inputButton" />
         </Link>
-
       </div>
 
       <div className="header__icon">
@@ -50,8 +49,7 @@ function Header() {
         />
       </div>
     </div>
-    // </Router> 
-
+    // </Router>
   );
 }
 

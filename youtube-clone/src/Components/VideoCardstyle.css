@@ -1,10 +1,10 @@
 .videoCard {
-  margin-bottom: 40px;
-  width: 270px;
+  /* margin-bottom: 40px; */
+  width: 170px;
   display: grid;
-  /* right: 0;
-     flex-direction: row;
-    flex-wrap: wrap; */
+  margin-left: 190px;
+  margin-top: 0px;
+ 
 
   grid-template-columns: 1fr 1fr 1fr;
 
@@ -13,15 +13,22 @@
 .videoCard__info {
   display: flex;
 }
-.sidebarRow__icon{
-    margin-left: 10px; 
-    font-size: large;
+.sidebarRow__icon {
+  margin-left: 10px;
+  font-size: large;
 }
 
-.sidebarRow__icon:hover{
-    background-color: lightgray;
-   
-    cursor: pointer; 
-     color: red;
-}
+.sidebarRow__icon:hover {
+  background-color: lightgray;
 
+  cursor: pointer;
+  color: red;
+}
+.emptyContent {
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  padding-left: 420px;
+  padding-right: 0x;
+  height: 100%;
+}
