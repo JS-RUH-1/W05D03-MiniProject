@@ -19,14 +19,19 @@ export default function Video() {
           setVideo(res.data.items[0])
         })
     }, [])
+    if(!video?.snippet) return <div>Video details not found. </div>
     return <div>
         <h1>{video?.snippet?.title}</h1>
 
         <iframe className="mb-4" width="560" height="315" src={`https://www.youtube.com/embed/${id}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div>
+            <p><b>Published:</b> {(new Date(video.snippet.publishedAt)).toLocaleString()}</p>
+           
         {state.watchLater.some(v => v.id === id) ? 
         <button className="btn btn-danger" onClick={() => dispatch(watchLater.remove(id))}>Remove from watch later</button>
     :   <button className="btn btn-primary" onClick={() => dispatch(watchLater.add(video))}>Add to watch later</button>}
+        
+        <p className="mt-4"><b>Description:</b> {video.snippet.description}</p>
         </div>
     </div>;
 }

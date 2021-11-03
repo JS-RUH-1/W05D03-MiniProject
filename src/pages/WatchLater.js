@@ -1,7 +1,9 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
+import { watchLater } from "../reducers/watch_later";
 
 export default function WatchLater() {
+  const dispatch = useDispatch();
     const state = useSelector((state) => {
         return {
             watchLater: state.watchLater.watchLater
@@ -17,6 +19,7 @@ export default function WatchLater() {
                 <p class="card-text">{v.snippet.title}</p>
               </div>
             </Link>
+            <button className="btn btn-danger" onClick={() => dispatch(watchLater.remove(v.id))}>Remove from watch later</button>
           </div>
         )) : <h3 className="mt-5">No videos in the watch later, please add one.</h3>}
 
