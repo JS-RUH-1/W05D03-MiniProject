@@ -27,3 +27,18 @@
 .description {
   padding-top: 2%;
 }
+@media screen and (max-width: 900px) {
+  .detailsPage {
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+  }
+  .leftSide {
+    flex: 1;
+    padding: 1%;
+  }
+  .rightSide {
+    flex: 1;
+    background-color: rgb(216, 216, 216);
+  }
+}

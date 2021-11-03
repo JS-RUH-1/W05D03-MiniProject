@@ -75,7 +75,7 @@ function Details() {
           <p>{allData.temp.snippet.description}</p>
         </div>
       </div>
-      <div className="rightSide"></div>
+      <div className="rightSide">here some vids</div>
     </div>
   );
 }

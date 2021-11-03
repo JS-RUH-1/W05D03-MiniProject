@@ -1,4 +1,4 @@
-import "./WatchedLater-module.css";
+import "../components/VidCard-module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromList } from "../data/watchLater";
 import { Link } from "react-router-dom";
