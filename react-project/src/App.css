@@ -1,0 +1,128 @@
+ 
+ /* //tablet */
+
+ /* PC */
+ @media screen and (min-width: 700px )  {
+     
+  .BigBox{
+     
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); ;
+  }
+
+}
+
+@media screen and (min-width: 500px) and (max-width:700px) {
+    
+    .BigBox{
+      
+      display: grid;
+      grid-template-columns: 1fr 1fr ;
+    }
+  }
+ 
+ 
+ 
+ body{
+   background-color: rgb(239, 242, 243);
+ }
+ .header{
+   display: grid;
+   grid-template-columns: 1fr 2fr;
+ }
+  
+ .subject{
+   font-family:cursive;
+   color: crimson;
+   margin-left: 2ch;
+    
+ }
+.TitleOfVidoe{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+color: rgb(122, 12, 12);
+font-weight: bold;
+
+}
+ .searchForm{
+   text-align: center;
+   margin-right: 1ch;
+   padding: 3ch;
+    
+ }
+ .searchInput{
+   font-family: cursive;
+   color: darkred;
+   width: 50%;
+   padding: 1ch;
+   margin: 1ch;
+   border: rgb(153, 119, 119) solid;
+ }
+ .searchBtn{
+   padding: 1ch;
+   background-color: rgb(30, 226, 151);
+   border: none;
+   font-family:unset;
+   font-weight: bold;
+   color: rgb(250, 255, 253);
+ }
+ .BigBox{
+    
+    text-align: center;
+   /* display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   gap: 8; */
+   margin: 1ch;
+ }
+ .SmallBox{
+    
+  margin: 1ch;
+  padding: 2ch;
+  text-align: center;
+   
+
+ }
+ .image{
+   text-align: left;
+ }
+ .watch{
+   background-color: rgb(106, 207, 197);
+   cursor: pointer;
+   padding: 1ch;
+   color: rgb(23, 80, 75);
+   font-family: serif;
+ }
+
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(224, 50, 50);
+}
+
+li {
+  float: left;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+li a {
+  display: block;
+  color: rgb(1, 12, 9);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.IMG{
+  /* padding-right: 1ch; */
+}
+ 
+li a:hover {
+  background-color: rgb(140, 197, 195);
+  text-decoration: underline;
+  color: rgb(230, 29, 29);
+  font-weight: bold;
+  font-size: xx-large;
+  size: 40%;
+   
+}
