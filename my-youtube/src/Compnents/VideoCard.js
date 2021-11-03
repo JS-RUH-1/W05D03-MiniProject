@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import WatchLater from "@material-ui/icons/WatchLater";
 import { useSelector, useDispatch } from "react-redux";
 import { addWatchLater } from "../Reducers/WatchLater/watchlater";
-
+import { addDetails } from "../Reducers/Details/details";
 export default function VideoCard({ video }) {
   const dispatch = useDispatch();
 
@@ -12,6 +12,7 @@ export default function VideoCard({ video }) {
     return {
       videos: state.videos.videos,
       watchlater: state.watchlater.watchlater,
+      details: state.details.details,
     };
   });
   const [watchLater, setwatchLater] = useState();
@@ -30,15 +31,31 @@ export default function VideoCard({ video }) {
 
   return (
     <div className="videoCard">
-      <img
-        className="videoCard__thumbnail"
-        src={video.snippet.thumbnails.medium.url}
-        alt=""
-      />
+      <Link
+        to={`/detilas/${video.id.videoId}`}
+        onClick={() => {
+          dispatch(addDetails(video));
+        }}
+      >
+        <img
+          className="videoCard__thumbnail"
+          src={video.snippet.thumbnails.medium.url}
+          alt=""
+        />
+      </Link>
+
       <div className="videoCard__info">
         <div className="video__text">
           <h4>
-            <Link to="/detilas"> {video.snippet.title} </Link>
+            <Link
+              onClick={() => {
+                addDetails(video);
+              }}
+              to={`/detilas/${video.id.videoId}`}
+            >
+              {" "}
+              {video.snippet.title}{" "}
+            </Link>
           </h4>
           <p>{video.snippet.channelTitle}</p>
         </div>
@@ -57,34 +74,3 @@ export default function VideoCard({ video }) {
     </div>
   );
 }
-
-// //but it back in return //*/*/*/*/*
-// <div className="videoCard">
-// <img
-//   className="videoCard__thumbnail"
-//   src={video.snippet.thumbnails.medium.url}
-//   alt=""
-// />
-// <div className="videoCard__info">
-//   <div className="video__text">
-//     <h4>
-//       <Link to="/detilas"> {video.snippet.title} </Link>
-//     </h4>
-//     <p>{video.snippet.channelTitle}</p>
-//   </div>
-//  <div className="videoCard__info__Watch__Later__btn">
-// <Link to={"/watchlater"}>
-// <button
-//   onClick={() => {
-//     console.log(video);
-//     setwatchLater(video);
-//     dispatch(addWatchLater(video));
-//     console.log(state.watchlater);
-//   }}
-// >
-//   <WatchLater />
-// </button>
-// </Link>
-// </div>
-//   </div>
-// </div>

@@ -48,6 +48,12 @@ function App() {
       <Router>
         <Header />
         <Switch>
+        <Route path="/detilas/:videoId">
+        <div className="App__grid">
+          <Sidebar />
+          <DetailsPage />
+        </div>
+      </Route>
           <Route path="/search/:searchTerm">
             <div className="App__grid">
               <Sidebar />
