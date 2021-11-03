@@ -7,8 +7,11 @@
   padding: 1%;
 }
 .rightSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   flex: 0.35;
-  background-color: rgb(216, 216, 216);
+  
 }
 .videoInfo {
   padding: 5px;
@@ -27,6 +30,16 @@
 .description {
   padding-top: 2%;
 }
+.vidCard_details {
+  display: flex;
+  padding: 5px;
+}
+.vidCard_details > img {
+  width: 40%;
+}
+.vidCard_details > h6 {
+  width: 60%;
+}
 @media screen and (max-width: 900px) {
   .detailsPage {
     padding: 2%;
@@ -39,6 +52,5 @@
   }
   .rightSide {
     flex: 1;
-    background-color: rgb(216, 216, 216);
   }
 }

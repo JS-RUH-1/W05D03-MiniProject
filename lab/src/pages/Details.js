@@ -1,8 +1,11 @@
 import "./Details-module.css";
 import { useSelector } from "react-redux";
-
+import { Link } from "react-router-dom";
+import { addTemp } from "../data/temp";
+import {  useDispatch } from "react-redux";
 import { RiShareForwardLine } from "react-icons/ri";
 function Details() {
+  const dispatch = useDispatch();
   const allData = useSelector((allData) => {
     return {
       Videos: allData.Videos.array,
@@ -75,7 +78,30 @@ function Details() {
           <p>{allData.temp.snippet.description}</p>
         </div>
       </div>
-      <div className="rightSide">here some vids</div>
+      <div className="rightSide">
+        {allData.Videos.map((e) => {
+          return (
+            <div className="vidCard_details">
+              <img src={e.snippet.thumbnails.medium.url} alt="" />
+              <h6
+                onClick={() => {
+                  dispatch(addTemp(e));
+                }}
+              >
+                <Link
+                  style={{
+                    color: allData.myStyle.font_Color,
+                  }}
+                  to="/Details"
+                  className="title"
+                >
+                  {e.snippet.title}
+                </Link>
+              </h6>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
