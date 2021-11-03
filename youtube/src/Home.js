@@ -1,6 +1,15 @@
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { updateWatchList } from "./states/watchlater/watchlater";
+import {  BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	useParams,
+    useHistory
+} from "react-router-dom"
 const axios = require('axios');
-
+//publishTime={element.snippet.publishedAt} views={element.statistics.viewCount} title={element.snippet.title} channel={element.snippet.channelTitle} description={element.snippet.description}
 function Home (){
     const [ popularYT, setPopularYT ] = useState ([]);
     useEffect (
@@ -21,12 +30,19 @@ function Home (){
                     popularYT.map(
                         (element) => {
                             return (
-                                <Link class="col video-grid mt-3" id={element.id} to={`/video/${element.id}`}>
+                                <Link to={{
+                                        pathname: `/video/${element.id}`,
+                                        state: {
+                                        videoInfo: element,
+                                        },
+                                    }} 
+                                class="col video-grid mt-3">
                                     <img src={element.snippet.thumbnails.medium.url} width={270} height={150}></img>
                                     <h6 class="video-title">{element.snippet.title}</h6>
                                     <small>{element.snippet.channelTitle}</small>
                                     <br></br>
                                     <small class="text-muted">{element.statistics.viewCount} • 1 Month ago </small>
+                                    <i class="bi bi-folder-plus"></i>
                                 </Link>
                             )
                         }

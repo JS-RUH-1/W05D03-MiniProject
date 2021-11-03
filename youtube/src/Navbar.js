@@ -6,12 +6,13 @@ import {  BrowserRouter as Router,
 	useParams,
     useHistory
 } from "react-router-dom"
+// bg #191919 -- nav 33,33,33,0.98
 function Navbar (){
     const history = useHistory();
     const [ searchString, setSearchString ] = useState ("");
     const handleOnClick = () => history.push('/search/' + searchString);
     return (    
-        <nav class="navbar navbar-light bg-white shadow">
+        <nav class="navbar navbar-light shadow nav">
             <div class="container-fluid">
                 <Link class="navbar-brand" to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" class="bi bi-youtube me-1" viewBox="0 0 16 16">
@@ -28,6 +29,7 @@ function Navbar (){
                         </svg>
                     </button>
                 </div>
+                <i class="bi bi-moon"></i>
             </div>
         </nav>
     );

@@ -13,8 +13,27 @@
 
 .video-grid {
 	cursor: pointer;
+	text-decoration: none;
+	color: inherit;
 }
 
-.col {
-	width: 270px !important;
+.video-flex {
+	display: flex;
+	cursor: pointer;
+	text-decoration: none;
+	color: inherit;
+}
+
+.video-title-size {
+	font-size: small;
+}
+
+
+.video-small-det {
+	font-size: smaller;
+}
+
+.watchlater-button {
+	text-decoration: none;
+	color: inherit;
 }
