@@ -50,15 +50,15 @@ function Search() {
           placeholder="Search for a video by name "
         />
       </div>
-
+     <div style={{overflow:'scroll',height:200}}>
       {inputSearch != "" ? (
         <ul>
           {results.map((item) => (
             <li
               style={{
                 listStyleType: "none",
-                border: "0.2px solid black",
                 borderRadius: 5,
+                width:"90%",
                 padding: 5,
               }}
             >
@@ -69,12 +69,16 @@ function Search() {
                 <img src={item.snippet.thumbnails.high.url} width="50px" />{" "}
                 {item.snippet.title}
               </Link>
+              <hr/>
             </li>
+            
+            
           ))}
         </ul>
       ) : (
         ""
       )}
+      </div>
     </div>
   );
 }
