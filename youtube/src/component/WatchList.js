@@ -1,23 +1,14 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import * as ReactBootStrap from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Col, Row, Card } from "react-bootstrap";
-import Watch from "./WatchList";
 import { useSelector } from "react-redux";
 
-function Home() {
+function Watch() {
   const state = useSelector((state) => {
     return {
-      video: state.video.video,
+      watch: state.watch.watch,
     };
   });
-
   return (
     <div>
-      <h4>Most Popular </h4>
-
-      {state.video.map((element) => {
+      {state.watch.map((element) => {
         return (
           <div className="card">
             <h3>Title : {element.snippet.title}</h3>
@@ -39,4 +30,5 @@ function Home() {
     </div>
   );
 }
-export default Home;
+
+export default Watch;

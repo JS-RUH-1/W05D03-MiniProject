@@ -15,44 +15,45 @@ import {
 } from "react-bootstrap";
 import Home from "./Home";
 import Search from "./Search";
-import { Add_videos } from "../reducers/video/video";
+import Watch from "./WatchList";
+import { addVideos } from "../reducers/video/video";
 import { useDispatch, useSelector } from "react-redux";
 
 function NavBar() {
   // this.state = { value: "" };
-  const [state, setState] = useState();
-  const [v, setV] = useState([]);
+  // const [state, setState] = useState();
+  // const [v, setV] = useState([]);
   const dispatch = useDispatch();
+  // const state = useSelector((state) => {
+  //   video: state.video.video;
+  // });
 
   // function handleChange(event) {
   //   console.log(event.target.value);
   //   setState({ value: event.target.value });
   // }
 
-  function handleSubmit(event) {
-    console.log(event.target[0].value);
-    let state = event.target[0].value;
-    setState(state);
+  // function handleSubmit(event) {
+  //   console.log(event.target[0].value);
+  //   let state = event.target[0].value;
+  //   setState(state);
 
-    event.preventDefault();
-  }
+  //   event.preventDefault();
+  // }
 
   useEffect(() => {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${state}&key=AIzaSyBPfC-b8MXBZ_DXTuQZvIl-WjmeU7Nf1lI`
+        "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&chart=mostPopular&key=AIzaSyBU6_Wp4jkeGmjxVuw52LdkvsbmtLvLUlI"
       )
       .then((res) => {
-        setV(res.data.items);
-        dispatch(Add_videos(v));
-
-        console.log(v);
+        dispatch(addVideos(res.data.items));
       })
 
       .catch((err) => {
         console.log(err);
       });
-  }, [state]);
+  }, []);
 
   return (
     <div>
@@ -66,19 +67,8 @@ function NavBar() {
               <li>
                 <Link to="/Search">Search</Link>
               </li>
-              <li className="serch">
-                <form action="/" method="get" onSubmit={handleSubmit}>
-                  <label htmlFor="header-search">
-                    <span className="visually-hidden">Search</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="header-search"
-                    placeholder="Search"
-                    name="s"
-                  />
-                  <button type="submit">Search</button>
-                </form>
+              <li>
+                <Link to="/WatchList">Watch List</Link>
               </li>
             </ul>
           </nav>
@@ -91,6 +81,9 @@ function NavBar() {
             </Route>
             <Route path="/Search">
               <Search />
+            </Route>
+            <Route path="/WatchList">
+              <Watch />
             </Route>
           </Switch>
         </div>
