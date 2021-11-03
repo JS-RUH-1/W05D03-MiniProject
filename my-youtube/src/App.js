@@ -1,11 +1,20 @@
 import "./Style/App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-// import Axios from "axios"
-// import { Navbar, Container, Nav } from "react-bootstrap";
+import axios from "axios";
 import Header from "./Compnents/Header";
 import Sidebar from "./Compnents/Sidebar";
 import SearchPage from "./Compnents/SearchPage";
 import RecommendeVideos from "./Compnents/RecommendeVideos";
+import WatchLaterpage from "./Compnents/WatchLaterpage";
+import DetailsPage from "./Compnents/DetailsPage";
+
+import { useSelector, useDispatch } from "react-redux";
+import { addVideos } from "./Reducers/Videos/videos";
+import { addSearchVideos } from "./Reducers/SearchVideos/searchVideos";
+import { addDetails } from "./Reducers/Details/details";
+
+import { useEffect } from "react";
+
 // **
 // my youtube key : AIzaSyBeVD4KH0sbbSzwiTUZl4icxDBmgOWPdtk
 // request to get popular vid
@@ -13,6 +22,27 @@ import RecommendeVideos from "./Compnents/RecommendeVideos";
 // requsest for serach *** q={keyword}
 //https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=hello&key=AIzaSyBeVD4KH0sbbSzwiTUZl4icxDBmgOWPdtk
 function App() {
+  const dispatch = useDispatch();
+
+  const state = useSelector((state) => {
+    return {
+      videos: state.videos.videos,
+    };
+  });
+  useEffect(() => {
+    axios
+      .get(
+        "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&chart=mostPopular&key=AIzaSyA5bYtXu769t0qDPwoFGKCX8QzzBrhiDww"
+      )
+      .then((res) => {
+        console.log(res.data.items);
+        dispatch(addVideos(res.data.items));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <div className="App">
       <Router>
@@ -24,7 +54,13 @@ function App() {
               <SearchPage />
             </div>
           </Route>
-          <Route path="/">
+          <Route path="/watchlater">
+            <div className="App__grid">
+              <Sidebar />
+              <WatchLaterpage />
+            </div>
+          </Route>
+          <Route exact path="/">
             <div className="App__grid">
               <Sidebar />
               <RecommendeVideos />

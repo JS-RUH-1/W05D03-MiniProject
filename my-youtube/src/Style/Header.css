@@ -41,3 +41,7 @@
   display: flex;
   align-items: center;
 }
+Link {
+  text-decoration-style: none !important;
+  color: gray !important;
+}

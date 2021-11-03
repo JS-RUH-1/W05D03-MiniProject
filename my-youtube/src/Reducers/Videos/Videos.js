@@ -2,19 +2,20 @@ const initialState = {
   videos: [],
 };
 
-const Videos = (state = initialState, { type, payload }) => {
+const videos = (state = initialState, { type, payload }) => {
   switch (type) {
-    case "GET_VIDEOS":
-      return { videos: payload };
+    case "ADD_VIDEOS":
+      return { videos: [...payload] };
     default:
       return state;
   }
 };
 
-export default Videos;
+export default videos;
 
-export const getVideos = () => {
+export const addVideos = (payload) => {
   return {
-    type: "GET_VIDEOS",
+    type: "ADD_VIDEOS",
+    payload: payload,
   };
 };

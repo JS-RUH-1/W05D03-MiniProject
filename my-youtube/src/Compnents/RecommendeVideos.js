@@ -1,70 +1,36 @@
 import React from "react";
 import "../Style/RecommendeVideos.css";
 import VideoCard from "../Compnents/VideoCard";
+import { useSelector, useDispatch } from "react-redux";
 function RecommendeVideos() {
+  const state = useSelector((state) => {
+    return {
+      videos: state.videos.videos,
+    };
+  });
+  console.log(state.videos);
+
   return (
     <div className="recommendeVideos">
-      <h2>RecommendeVideos</h2>
+      <h2>Popular Videos</h2>
       <div className="recommendeVideos__videos">
-        <VideoCard
-          title="Become web dev"
-          views="2.3M views"
-          timestamp="3 days ago"
-          channelImage="https://media-exp1.licdn.com/dms/image/C5603AQEgIAmbHoCUIA/profile-displayphoto-shrink_100_100/0/1626620202480?e=1641427200&v=beta&t=IvYwy89hTSEasvqrnrYBgmL3385SjMopnJ-7JaVYALU"
-          channel="Abdullah-sa"
-          image="https://i.ytimg.com/vi/YQHsXMglC9A/mqdefault.jpg"
-        />
-        <VideoCard
-          title="Become web dev"
-          views="2.3M views"
-          timestamp="3 days ago"
-          channelImage="https://media-exp1.licdn.com/dms/image/C5603AQEgIAmbHoCUIA/profile-displayphoto-shrink_100_100/0/1626620202480?e=1641427200&v=beta&t=IvYwy89hTSEasvqrnrYBgmL3385SjMopnJ-7JaVYALU"
-          channel="Abdullah-sa"
-          image="https://i.ytimg.com/vi/YQHsXMglC9A/mqdefault.jpg"
-        />
-        <VideoCard
-          title="Become web dev"
-          views="2.3M views"
-          timestamp="3 days ago"
-          channelImage="https://media-exp1.licdn.com/dms/image/C5603AQEgIAmbHoCUIA/profile-displayphoto-shrink_100_100/0/1626620202480?e=1641427200&v=beta&t=IvYwy89hTSEasvqrnrYBgmL3385SjMopnJ-7JaVYALU"
-          channel="Abdullah-sa"
-          image="https://i.ytimg.com/vi/YQHsXMglC9A/mqdefault.jpg"
-        />
-        <VideoCard
-          title="Become web dev"
-          views="2.3M views"
-          timestamp="3 days ago"
-          channelImage="https://media-exp1.licdn.com/dms/image/C5603AQEgIAmbHoCUIA/profile-displayphoto-shrink_100_100/0/1626620202480?e=1641427200&v=beta&t=IvYwy89hTSEasvqrnrYBgmL3385SjMopnJ-7JaVYALU"
-          channel="Abdullah-sa"
-          image="https://i.ytimg.com/vi/YQHsXMglC9A/mqdefault.jpg"
-        />
-        <VideoCard
-          title="Become web dev"
-          views="2.3M views"
-          timestamp="3 days ago"
-          channelImage="https://media-exp1.licdn.com/dms/image/C5603AQEgIAmbHoCUIA/profile-displayphoto-shrink_100_100/0/1626620202480?e=1641427200&v=beta&t=IvYwy89hTSEasvqrnrYBgmL3385SjMopnJ-7JaVYALU"
-          channel="Abdullah-sa"
-          image="https://i.ytimg.com/vi/YQHsXMglC9A/mqdefault.jpg"
-        />
-        <VideoCard
-          title="Become web dev"
-          views="2.3M views"
-          timestamp="3 days ago"
-          channelImage="https://media-exp1.licdn.com/dms/image/C5603AQEgIAmbHoCUIA/profile-displayphoto-shrink_100_100/0/1626620202480?e=1641427200&v=beta&t=IvYwy89hTSEasvqrnrYBgmL3385SjMopnJ-7JaVYALU"
-          channel="Abdullah-sa"
-          image="https://i.ytimg.com/vi/YQHsXMglC9A/mqdefault.jpg"
-        />
-        <VideoCard
-          title="Become web dev"
-          views="2.3M views"
-          timestamp="3 days ago"
-          channelImage="https://media-exp1.licdn.com/dms/image/C5603AQEgIAmbHoCUIA/profile-displayphoto-shrink_100_100/0/1626620202480?e=1641427200&v=beta&t=IvYwy89hTSEasvqrnrYBgmL3385SjMopnJ-7JaVYALU"
-          channel="Abdullah-sa"
-          image="https://i.ytimg.com/vi/YQHsXMglC9A/mqdefault.jpg"
-        />
+        {state.videos.map((vid) => {
+          console.log(vid);
+          return <VideoCard video={vid} />;
+        })}
       </div>
     </div>
   );
 }
 
 export default RecommendeVideos;
+
+// back inside div recommendeVideos__videos
+// {state.videos.map((vid) => {
+//   console.log(vid);
+//   return (
+//     <VideoCard
+//     video={vid}
+//     />
+//   );
+// })}

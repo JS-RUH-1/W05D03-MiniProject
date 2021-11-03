@@ -1,20 +1,27 @@
 import React from "react";
 import "../Style/SearchPage.css";
+import "../Style/RecommendeVideos.css";
 import VideoCard from "../Compnents/VideoCard";
+import { useSelector } from "react-redux";
 
 function SearchPage() {
+  const state = useSelector((state) => {
+    return {
+      searchVideos: state.searchVideos.searchVideos,
+    };
+  });
   return (
     <div className="searchPage">
-      <VideoCard
-        title="Become web dev"
-        views="2.3M views"
-        timestamp="3 days ago"
-        channelImage="https://media-exp1.licdn.com/dms/image/C5603AQEgIAmbHoCUIA/profile-displayphoto-shrink_100_100/0/1626620202480?e=1641427200&v=beta&t=IvYwy89hTSEasvqrnrYBgmL3385SjMopnJ-7JaVYALU"
-        channel="Abdullah-sa"
-        image="https://i.ytimg.com/vi/YQHsXMglC9A/mqdefault.jpg"
-      />
+      <h2>Search Page</h2>
+      <div className="recommendeVideos__videos">
+        {state.searchVideos.map((vid) => {
+          console.log(vid);
+          return <VideoCard video={vid} />;
+        })}
+      </div>
     </div>
   );
 }
 
 export default SearchPage;
+// <VideoCard video={vidt} />

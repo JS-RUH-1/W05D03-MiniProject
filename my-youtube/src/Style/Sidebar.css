@@ -3,6 +3,7 @@
   align-items: center;
   flex-direction: row;
   padding: 10px 20px;
+   text-decoration: none !important;
 }
 .sidebarRow__icon {
   color: #606060;
@@ -20,4 +21,8 @@
 }
 .sidebarRow:hover > .sidebarRow__icon {
   color: red;
+}
+.sidebarRow__h2 {
+  text-decoration: none !important;
+  color: #606060 !important;
 }
