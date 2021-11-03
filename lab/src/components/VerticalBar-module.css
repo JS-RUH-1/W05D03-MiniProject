@@ -1,0 +1,25 @@
+.VerticalBar {
+  flex: 0.15;
+  background-color: white;
+}
+
+.VerticalBar_Link:hover {
+  color: rgb(228, 2, 2);
+  background-color: rgb(161, 161, 161);
+}
+.VerticalBar_Link:focus {
+  background-color: rgb(161, 161, 161);
+}
+.VerticalBar_Link {
+  text-align: center;
+  padding: 5% 10%;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  text-decoration: none;
+  color: black;
+}
+.link_Icon {
+  font-size: 120%;
+  margin-right: 15%;
+}

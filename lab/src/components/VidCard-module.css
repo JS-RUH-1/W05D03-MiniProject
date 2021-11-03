@@ -1,0 +1,109 @@
+.allCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+  padding: 2% !important;
+  height: auto;
+}
+.cardThumb {
+}
+.cardThumb img {
+  width: 100%;
+}
+.titleBtn {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  text-align: left;
+}
+.title {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+}
+.title > img:hover {
+  background-image: linear-gradient(grey, grey);
+}
+.watchLaterBtn {
+  border: 0px;
+  margin: 0 !important;
+  background-color: rgba(0, 0, 0, 0.746);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+.watchLater {
+  display: flex;
+  justify-content: flex-end;
+  flex: 0.15;
+  padding-top: 3%;
+}
+.info {
+  display: flex;
+}
+.data {
+  text-align: left;
+  flex: 0.85;
+}
+.channelName {
+  color: grey;
+}
+.time {
+  color: grey;
+}
+/* Container needed to position the overlay. Adjust the width as needed */
+.container1 {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: rgba(19, 19, 19, 0.541);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container1:hover .overlay {
+  opacity: 1;
+}
+
+/* The icon inside the overlay is positioned in the middle vertically and horizontally */
+.icon {
+  color: white;
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.watchLater_remove_Btn {
+  border: 0px;
+  margin: 0 !important;
+  background-color: rgba(221, 0, 0, 0.746);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}

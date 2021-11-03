@@ -1,0 +1,16 @@
+/* .App {
+  min-height: calc(100vh - 56px);
+  background-color: rgb(249, 249, 249);
+  flex: 0.8;
+  width: 80%;
+} */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-right {
+  flex: 0.85;
+  min-height: calc(100vh - 56px);
+  background-color: rgb(249, 249, 249);
+}
