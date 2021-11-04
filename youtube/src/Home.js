@@ -3,6 +3,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { addvidWatchlater } from './reducers/watchReducer'
 import {useDispatch} from "react-redux";
+import {  BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	useParams,
+    useHistory
+} from "react-router-dom"
 
 function Home(){
 
@@ -24,14 +31,20 @@ function Home(){
         {popularV.map((e)=> {
             return(
                 <div>
+                <Link to={{
+                    pathname: `/video/${e.id}`,
+                    state: {
+                        videoInfo: e,
+                    }
+                }}>
 
-              {/* <img src={e.snippet.thumbnails.medium.url}></img> */}
-              <iframe title={e.snippet.title} src={`https://www.youtube.com/embed/${e.id.videoId}`}></iframe>
+               <img src={e.snippet.thumbnails.medium.url}></img>
               <h3>{e.snippet.title}<br/></h3> 
               <p>{e.snippet.channelTitle} . {e.snippet.publishedAt}</p>
-              <button onClick= {()=> {dispatch(addvidWatchlater(e))}}>Add To Watch Laeter</button>
               
-                </div>)}
+                </Link>
+                <button onClick= {()=> {dispatch(addvidWatchlater(e))}}>Add To Watch Laeter</button>
+</div>)}
             )
         }
         </div>
