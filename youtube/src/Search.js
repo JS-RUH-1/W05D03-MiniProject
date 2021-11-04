@@ -1,10 +1,13 @@
-import {useEffect } from "react";
+import {useEffect,useState } from "react";
 import axios from "axios";
 import './App.css';
-import {useSelector,useDispatch} from "react-redux";
+import { addvidWatchlater } from './reducers/watchReducer'
+import {useDispatch,useSelector} from "react-redux";
 import {saveWord,saveArray} from "./reducers/searchReducer";
 
 function Search (){
+
+    const [ searchedVideos, setSearchedVideos ] = useState ([]);
 
     const dispatch = useDispatch();
     const state = useSelector((store)=> {
@@ -12,16 +15,14 @@ function Search (){
 
         return {
             searchW: store.searches.searchWord,
-            searchArr: store.searches.searchArray,
         }
     })
 
     
     useEffect (()=> {
-        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${state.searchW}&key=AIzaSyCoeA6V0VFMQ3XyN5AkjFsInchMZnlVUgY`)
+        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${state.searchW}&key=AIzaSyDLyTSLIKCjnCb0gmVzPcPnq2q1-dngnoY`)
      .then(response => {
-
-        dispatch(saveArray(response.data.items))
+        setSearchedVideos(response.data.items)
         
         });
      },[])
@@ -31,7 +32,34 @@ function Search (){
 
     <div>
 
-{
+    <div class="container-fluid">
+    <div class="row mt-5 justify-content-md-center">
+        {
+            searchedVideos.map(
+                (e) => {
+                    return (
+                        <div class="col video-grid mt-3" id={e.id}>
+                            <img src={e.snippet.thumbnails.medium.url} width={270} height={150}></img>
+                            <h6 class="video-title">{e.snippet.title}</h6>
+                            <small>{e.snippet.channelTitle} . {e.snippet.publishedAt}</small>
+                            <br></br>
+                            <small class="text-muted">1 Month ago </small>
+                            <button onClick= {(e)=> {dispatch(addvidWatchlater(e))}}>Add To Watch Laeter</button>
+                        </div>
+                    )
+                }
+            )
+        
+        }
+    </div>  
+</div>
+ </div> 
+
+
+ )}
+export default Search;
+
+/*{
 
     state.searchArr.map((e)=> {
     return(
@@ -41,9 +69,18 @@ function Search (){
     <p>{e.snippet.channelTitle} . {e.snippet.publishedAt}</p>
         </div>)})
 
-}
- </div> 
+        state.searchArray.map(
+                (element) => {
+                    return (
+                        <div class="col video-grid mt-3" id={element.id}>
+                            <img src={element.snippet.thumbnails.medium.url} width={270} height={150}></img>
+                            <h6 class="video-title">{element.snippet.title}</h6>
+                            <small>{element.snippet.channelTitle}</small>
+                            <br></br>
+                            <small class="text-muted">1 Month ago </small>
+                        </div>
+                    )
+                }
+            )
 
-
- )}
-export default Search;
+}*/
