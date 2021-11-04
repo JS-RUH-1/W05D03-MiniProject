@@ -169,9 +169,10 @@ export default function Search() {
                 <p>{elm.snippet.title}</p>
 
                 <div className="image">
+                <button className='LaterBtn'>       
      <img  onClick = {()=>((dispatch(watchLater(elm))) )}  
            src="https://img.icons8.com/color/30/000000/star--v1.png" alt=''/>
-             
+             </button>
            </div>
                {/* <button> <small>watch later</small></button> */}
                 </div>

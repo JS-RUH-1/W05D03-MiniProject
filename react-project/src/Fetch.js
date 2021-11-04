@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 import axios from 'axios'
+import './App.css';
 
-import {watchLater} from './Reducers/YoutReducer';
 
+import {watchLater,remove} from './Reducers/YoutReducer';
+ 
+// import WatchLaterIcon from '@mui/icons-material/WatchLater';
  import {useSelector, useDispatch} from 'react-redux';
  
 
@@ -39,6 +42,7 @@ import {watchLater} from './Reducers/YoutReducer';
        }
    ])
    
+    
     // const FetchAPI=()=>{
 
     // fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&chart=mostPopular&key=AIzaSyAAIr9iYdLDg_MhJCvpWjZaov5Jm0bRS7I')
@@ -55,17 +59,17 @@ import {watchLater} from './Reducers/YoutReducer';
 
 // /That is for youtube 
 
-        useEffect(()=>{
-    axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&chart=mostPopular&key=AIzaSyA9PH9fvQgSQN3C_1zFQtDJc4joW0iHti0')
+//     useEffect(()=>{
+//     axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&chart=mostPopular&key=AIzaSyA9PH9fvQgSQN3C_1zFQtDJc4joW0iHti0')
 
-.then((res)=>{
-    console.log(res.data)
-    setData(res.data.items)
-})
+// .then((res)=>{
+//     console.log(res.data)
+//     setData(res.data.items)
+// })
 
-},[])
+// },[])
 
-
+ 
     return(     
 
         <>
@@ -90,10 +94,17 @@ import {watchLater} from './Reducers/YoutReducer';
      <br/>
      <br/>
 
-<div className="image">
-     <img  onClick = {()=>((dispatch(watchLater(elm))) )}  
-           src="https://img.icons8.com/color/30/000000/star--v1.png" alt=''/>
-             
+<div className="image"> */}
+
+ {/* <WatchLaterIcon />  */}
+
+{/* <button className='LaterBtn'>   
+
+     <img onClick = {()=>((dispatch(watchLater(elm))) )} 
+
+    src="https://img.icons8.com/color/15/000000/star--v1.png" alt=''/>
+
+   </button>
            </div>
 
      
@@ -102,22 +113,22 @@ import {watchLater} from './Reducers/YoutReducer';
  
 </div>
 
-
- 
-
-
-
 <div>
     <div className='BigBox'>
 
 
-    {/* {console.log(state.WatchLater)}
-    {state.WatchLater.map((e)=>(
+    {console.log(state.WatchLater)}
+
+    {/* {state.WatchLater.map((e)=>(
         <>
-        <div className='RemoBn'> 
+        <div className='RemoBn'  > 
+
         <h4>{e.name}</h4>
-        <img onClick={()=>dispatch(remove(e))}
+             
+         <button className='RemoveBtn'>
+        <img onClick={()=>(dispatch(remove(e.id)))}
         src="https://img.icons8.com/fluency/40/000000/delete-forever.png" alt=''/>
+</button>
          </div>
 </>
     ))} */}
@@ -138,9 +149,10 @@ import {watchLater} from './Reducers/YoutReducer';
              <br/>
              <div className='image'>
             {/* <button  onClick = {()=>((dispatch(watchLater(elm))) )}>Watch Later</button> */}
+            <button className='LaterBtn' > 
             <img   onClick = {()=>((dispatch(watchLater(elm))) )}
                src="https://img.icons8.com/color/30/000000/star--v1.png" alt=''/>
-    
+    </button>
             </div>
 
 

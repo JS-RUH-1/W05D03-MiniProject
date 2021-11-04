@@ -79,10 +79,22 @@ font-weight: bold;
   padding: 2ch;
   text-align: center;
    
-
+ }
+.RemoveBtn{
+  background-color: rgb(209, 198, 154);
+  margin: 2ch;
+   
+}
+ .LaterBtn{
+   background-color: rgb(26, 145, 115);
+      
+ }
+ .LaterBtn a:hover{
+   background-color: brown;
+   padding: 1ch;
  }
  .image{
-   text-align: left;
+  margin-right: 4ch;
  }
  .watch{
    background-color: rgb(106, 207, 197);

@@ -32,15 +32,17 @@ export default function WatchLater() {
 <iframe width={200} height={145} title="This is a unique title"
 src={`https://www.youtube.com/embed/${elm.id.videoId}`}>
 </iframe>
-<small>{elm.snippet.title}</small>
- 
-<div className='RemoBn'> 
-<img onClick={() => dispatch(remove(elm))}
 
-src="https://img.icons8.com/fluency/40/000000/delete-forever.png" alt=''/>
+<small>{elm.snippet.title}</small>
+ <br/>
+
+<button className='RemoBn'> 
+
+<img onClick={() => (dispatch(remove(elm)))}
+
+src="https://img.icons8.com/fluency/30/000000/delete-forever.png" alt=''/>
          
-           
-         </div>
+</button>
 </div>
 
 

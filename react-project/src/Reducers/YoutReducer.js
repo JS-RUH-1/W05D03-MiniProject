@@ -20,7 +20,7 @@ const initState={
       case 'REMOVE':
              return{
         yout:state.yout.filter((elm)=>{
-            return elm.id !== payload.id
+          return elm.id !== payload.id
         })
     }
             default:
@@ -44,7 +44,7 @@ export const watchLater=(data)=>{
 
 export const remove=(data)=>{
 return{
-    type:' REMOVE',
+    type:'REMOVE',
     payload:data
 }
 }
