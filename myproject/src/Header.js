@@ -19,8 +19,8 @@ function Header(){
     <Container>
     <Navbar.Brand> <Link exact to="/">Home</Link></Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link ><Link to="/Watch">Watch Later</Link></Nav.Link>
-      <Nav.Link ><Link to ="/Search">Search</Link></Nav.Link>
+      <Nav.Link ><Link exact to="/Watch">Watch Later</Link></Nav.Link>
+      <Nav.Link ><Link  to ="/Search">Search</Link></Nav.Link>
     </Nav>
     </Container>
   </Navbar>
