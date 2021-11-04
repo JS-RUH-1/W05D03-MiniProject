@@ -59,15 +59,15 @@ import {watchLater,remove} from './Reducers/YoutReducer';
 
 // /That is for youtube 
 
-//     useEffect(()=>{
-//     axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&chart=mostPopular&key=AIzaSyA9PH9fvQgSQN3C_1zFQtDJc4joW0iHti0')
+    useEffect(()=>{
+    axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&chart=mostPopular&key=AIzaSyA9PH9fvQgSQN3C_1zFQtDJc4joW0iHti0')
 
-// .then((res)=>{
-//     console.log(res.data)
-//     setData(res.data.items)
-// })
+.then((res)=>{
+    console.log(res.data)
+    setData(res.data.items)
+})
 
-// },[])
+},[])
 
  
     return(     
