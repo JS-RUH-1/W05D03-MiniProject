@@ -44,7 +44,7 @@ function NavBar() {
   useEffect(() => {
     axios
       .get(
-        "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&chart=mostPopular&key=AIzaSyBU6_Wp4jkeGmjxVuw52LdkvsbmtLvLUlI"
+        "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&chart=mostPopular&key=AIzaSyClSO1WDUoQ2er-36ZL7BN8H_gz4oRqPa8"
       )
       .then((res) => {
         dispatch(addVideos(res.data.items));

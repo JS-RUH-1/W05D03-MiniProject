@@ -1,11 +1,19 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeWatch } from "../reducers/watch/watch";
 
 function Watch() {
+  const dispatch = useDispatch();
   const state = useSelector((state) => {
     return {
       watch: state.watch.watch,
     };
   });
+
+  // function removeWatch(element) {
+  //   dispatch(removeWatch(element));
+  //   alert("Remove from Watch Later");
+  // }
+
   return (
     <div>
       {state.watch.map((element) => {
@@ -24,6 +32,15 @@ function Watch() {
             <br></br>
             <h5>Description: </h5>
             <p>{element.snippet.description}</p>
+            <br></br>
+            <button
+              onClick={() => {
+                dispatch(removeWatch(element));
+                alert("Removed");
+              }}
+            >
+              Remove
+            </button>
           </div>
         );
       })}

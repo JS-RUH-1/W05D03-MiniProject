@@ -32,7 +32,7 @@ function Search() {
   useEffect(() => {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${result}&key=AIzaSyBU6_Wp4jkeGmjxVuw52LdkvsbmtLvLUlI`
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${result}&key=AIzaSyClSO1WDUoQ2er-36ZL7BN8H_gz4oRqPa8`
       )
       .then((res) => {
         setFinalResult(res.data.items);
@@ -49,6 +49,7 @@ function Search() {
     let arr = [];
     arr.push(element);
     dispatch(addWatch(arr));
+    alert("Add To Watch Later");
   }
 
   return (
