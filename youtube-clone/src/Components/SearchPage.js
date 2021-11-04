@@ -3,7 +3,8 @@ import "./Searchstyle.css";
 import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
 import VideoRow from './VideoRow';
 import { useParams } from 'react-router';
-function SearchPage(props) {
+
+function SearchPage() {
  const {searchTerm}=useParams();
     return ( 
 <div className="searchPage">
