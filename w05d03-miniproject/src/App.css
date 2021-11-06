@@ -1,0 +1,297 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#home_title{
+  margin-top: 150px;
+  margin-bottom: 50px;
+  align-self: flex-start;
+}
+
+
+#videos{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.video{
+  padding: 5px;
+  background: #576071;
+}
+
+.videos_parent{
+  height: 70vh;
+  width:30vw;
+  background: #576071;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.videos_parent:hover{
+  background: rgb(88, 1, 1);
+}
+.video_thumbnail{
+  padding: 1px;
+  align-self: center;
+  width:inherit
+}
+.video_title{
+  margin: 5px;
+  overflow: auto;
+  height: 70%;
+}
+.video_channel_title{
+  margin: 5px;
+  align-self: flex-start;
+  color: rgb(241, 167, 167);
+  border: #282c34;
+  border-style: solid;
+  border-width: 1px;
+  background: #282c34;
+  padding: 5px;
+  border-radius: 8%;
+}
+.video_stats{
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+.views{padding-top:5px; padding-bottom: 5px; margin-top: 5px; margin-bottom: 0px; text-shadow: 1px 1px 1px black, 0px 0px 1px black, -1px -1px 1px black;}
+.dislikes,.likes{
+  margin-top: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 1px;
+  text-shadow: 1px 1px 1px black, 0px 0px 1px black, -1px -1px 1px black;
+  align-self: center;
+  justify-self: center;
+}
+.likes{
+  color:rgb(6, 225, 6);
+}
+.dislikes{
+  color:rgb(241, 65, 65);
+}
+.Link{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+.Link:hover{
+  color:rgb(238, 141, 141);
+  text-shadow: 0.5px 0.5px 1px black, 0.5px -0.5px 1px black, -0.5px 0.5px 1px black, -0.5px -0.5px 1px black;
+}
+.Link_home{
+  text-decoration: none;
+  color: white;
+  font-weight: bolder;
+  font-size: 24px;
+  transition: 0.6s;
+  border-radius: 1cm;
+}
+.Link_home:hover{
+  transform: translate3D(0, -1px, 0) scale(1.01); /* move up slightly and zoom in */
+  box-shadow: 1px 1px 1px white, -1px -1px 1px white, -1px 1px 1px white, 1px -1px 1px white;
+  border-radius: 1cm;
+  padding: 5px;
+  transition: all 0.4s ease; /* zoom in */
+  cursor: pointer;
+  background:red;
+  color: rgb(255, 220, 220);
+}
+.Link_search{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  background:green;
+  padding: 5px;
+  border-radius: 0.2cm;
+}
+.Link_search:hover{
+  text-decoration: none;
+  color: white;
+}
+#Link_search{
+  transition: 0.1s;
+}
+#Link_search:hover{
+  transform: translate3D(0px, 0px, 0px) scale(1.1);
+  transition: all 0.3s ease; 
+}
+.watchlist_video_card{
+  background: #576071;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-bottom: 10px;
+  width: 60vw;
+}
+.watchlist_video{
+  width:99%;
+}
+
+#watchlist{
+  display: flex;
+  flex-direction: column;
+}
+.watchlist_video_card_with_delete{
+  
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.delete_button{
+  background: #576071;
+  color: red;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: none;
+  align-self: flex-end;
+}
+.delete_button:hover{
+  text-shadow: 1px 1px 1px rgb(69, 0, 0), -1px -1px 1px rgb(31, 160, 35), 1px -1px 1px rgb(69, 0, 0), -1px 1px 1px rgb(69, 0, 0);
+  border-top:solid;
+  border-left: solid;
+  border-right: solid;
+  border-color: #393f4a;
+  border-width: 1px;
+}
+
+#video_page_details>button{
+  border-radius: 1cm;
+  color: white;
+  border-color: white;
+  background: red;
+}
+.play_iframe{
+  width:99%;
+}
+
+@media (max-width:700px){
+  #home_title{
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  #videos{
+    grid-template-columns: 50% 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+.video{
+  padding: 5px;
+}
+
+.videos_parent{
+  height: 50vh;
+  width:40vw;
+}
+.video_thumbnail{
+  padding: 1px;
+}
+.video_title{
+  margin: 2px;
+  font-size: 14px;
+}
+.video_channel_title{
+  font-size: 12px;
+  padding: 2px;
+}
+.views{font-size: 9px; padding-top:2px; padding-bottom: 2px; margin-top: 2px; margin-bottom: 0px; text-shadow: 1px 1px 1px black, 0px 0px 1px black, -1px -1px 1px black;}
+.dislikes,.likes{
+  font-size: 9px;
+  margin-top: 0px;
+  padding-left: 15px;
+  margin-bottom: 1px;
+  text-shadow: 1px 1px 1px black, 0px 0px 1px black, -1px -1px 1px black;
+  align-self: center;
+  justify-self: center;
+}
+.Link_home{
+  font-size: 18px;
+}
+.Link{
+  font-size: 14px;
+}
+#Link_search{
+  height: 20px;
+  font-size: 10px;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.Link_search{
+  width: 30px;
+  font-size: 7px;
+  padding: 1px;
+  border-radius: 1px;
+}
+#play_iframe{
+  width:80vw;
+  height: 60vw;
+}
+#video_page_details>h1{
+  font-size: 18px;
+}
+#video_page_details>h2{
+  font-size: 14px;
+}
+#video_page_details>h4{
+  font-size: 10px;
+}
+#video_page_details>h6{
+  font-size: 8px;
+}
+#video_page_details>button{
+  font-size: 14px;
+}
+}
+
+@media (max-width:550px){
+  #videos{
+    grid-template-columns: 100%;
+  }
+  .videos_parent{
+    height: 70vh;
+    width:80vw;
+  }
+  .watchlist_video_card{
+    width: 95vw;
+  }
+}
