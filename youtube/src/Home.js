@@ -1,6 +1,9 @@
+import React from 'react'
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { updateWatchList } from "./states/watchlater/watchlater";
+import { addToWatchList, removeFromWatchList } from "./states/watchlater/watchlater";
+import { toggleDarkMode } from "./states/darkmode/darkmode";
+
 import {  BrowserRouter as Router,
 	Switch,
 	Route,
@@ -8,42 +11,68 @@ import {  BrowserRouter as Router,
 	useParams,
     useHistory
 } from "react-router-dom"
+
 const axios = require('axios');
-//publishTime={element.snippet.publishedAt} views={element.statistics.viewCount} title={element.snippet.title} channel={element.snippet.channelTitle} description={element.snippet.description}
+
 function Home (){
+
+    const dispatch = useDispatch();
+  
+	const state = useSelector((state) => {
+		return {
+			watchlater: state.watchlater.watchlater,
+            darkMode: state.darkmode.darkmode,
+
+		};
+	});
+
+
     const [ popularYT, setPopularYT ] = useState ([]);
+    const [ wlstate, setwlstate ] = useState ([]);
+
     useEffect (
         ()=>{
             axios.get("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=20&chart=mostPopular&regionCode=US&key=AIzaSyB8yo4QnKx8hMK-hfJtPleb3JNquh9eZF4")
             .then(
                 (response) => {
                     setPopularYT(response.data.items);
+                    setwlstate ( state.watchlater )
                 }
             )
-        }, []
+        }, [state.watchlater]
     )
 
+    function kFormatter(num) {
+        return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+    }
+
     return (
-        <div class="container-fluid">
-            <div class="row mt-5 justify-content-md-center">
+        <div className="container-fluid">
+            <div className="row mt-5 justify-content-md-center">
                 {
                     popularYT.map(
                         (element) => {
                             return (
-                                <Link to={{
-                                        pathname: `/video/${element.id}`,
-                                        state: {
-                                        videoInfo: element,
-                                        },
-                                    }} 
-                                class="col video-grid mt-3">
-                                    <img src={element.snippet.thumbnails.medium.url} width={270} height={150}></img>
-                                    <h6 class="video-title">{element.snippet.title}</h6>
-                                    <small>{element.snippet.channelTitle}</small>
-                                    <br></br>
-                                    <small class="text-muted">{element.statistics.viewCount} • 1 Month ago </small>
-                                    <i class="bi bi-folder-plus"></i>
-                                </Link>
+                                <div className="col video-grid mt-3">
+                                    <Link to={{
+                                            pathname: `/video/${element.id}`,
+                                            state: {
+                                            videoInfo: element,
+                                            },
+                                        }} 
+                                        className="video-grid">
+                                        <img src={element.snippet.thumbnails.medium.url} width={270} height={150}></img>
+                                        <h6 className="video-title">{element.snippet.title}</h6>
+                                        <small>{element.snippet.channelTitle}</small>
+                                        <br></br>
+                                        <small className="text-muted">{kFormatter(element.statistics.viewCount)} • 1 Month ago </small>
+                                    </Link>
+                                    {
+                                        (wlstate.filter(e => e.id === element.id).length > 0)
+                                        ?<div onClick={()=>dispatch(removeFromWatchList(element.id))}><i className="bi bi-folder-minus"></i> Remove from Watchlist</div>
+                                        :<div onClick={()=>dispatch(addToWatchList(element.id,element))}><i className="bi bi-folder-plus"></i> Add to Watchlist</div>
+                                    }
+                                </div>
                             )
                         }
                     )

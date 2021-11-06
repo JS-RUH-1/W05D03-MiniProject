@@ -1,8 +1,6 @@
+import React from 'react'
 import { useEffect, useState } from 'react';
 import {  BrowserRouter as Router,
-	Switch,
-	Route,
-	Link,
 	useParams} from "react-router-dom"
 
 const axios = require('axios');

@@ -1,7 +1,8 @@
 import { createStore, combineReducers } from "redux";
-import watchLater from './watchlater/watchlater';
+import watchlater from './watchlater/watchlater';
+import darkmode from './darkmode/darkmode';
 
-const reducers = combineReducers({ watchLater });
+const reducers = combineReducers({ watchlater, darkmode });
 const store = createStore(reducers);
 
 export default store;

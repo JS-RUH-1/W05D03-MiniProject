@@ -1,18 +1,27 @@
-import { useRef, useState } from "react";
+import React from 'react'
+import { useState } from "react";
 import {  BrowserRouter as Router,
-	Switch,
-	Route,
 	Link,
-	useParams,
     useHistory
 } from "react-router-dom"
+import { toggleDarkMode } from "./states/darkmode/darkmode";
+import { useDispatch, useSelector } from "react-redux";
+
+
 // bg #191919 -- nav 33,33,33,0.98
 function Navbar (){
+    const dispatch = useDispatch();
     const history = useHistory();
     const [ searchString, setSearchString ] = useState ("");
+    const state = useSelector((state) => {
+		return {
+            darkMode: state.darkmode.darkmode,
+
+		};
+	});
     const handleOnClick = () => history.push('/search/' + searchString);
     return (    
-        <nav class="navbar navbar-light shadow nav">
+        <nav class={`navbar shadow nav navbar-bg-${state.darkMode ? 'dark' : 'light' }`}>
             <div class="container-fluid">
                 <Link class="navbar-brand" to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" class="bi bi-youtube me-1" viewBox="0 0 16 16">
@@ -29,7 +38,8 @@ function Navbar (){
                         </svg>
                     </button>
                 </div>
-                <i class="bi bi-moon"></i>
+                <Link to="/watchlist" class="bi bi-bookmark-plus" ></Link>
+                <i class={state.darkMode ? 'bi bi-brightness-high' : 'bi bi-moon'} onClick={()=>dispatch(toggleDarkMode())}></i>
             </div>
         </nav>
     );

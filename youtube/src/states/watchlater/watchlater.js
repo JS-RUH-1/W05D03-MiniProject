@@ -1,23 +1,36 @@
 const initialState = {
-    watchLater: []
+    watchlater: []
 }
 
-const todo = (state = initialState, {type, payload}) => {
+const watchlater = (state = initialState, {type, payload, id}) => {
     switch (type) {
-        case 'updateWatchList':
+        case 'add':
             return {
-                todo: payload
+                watchlater: [...state.watchlater, payload]
+            }
+        case 'remove':
+            return {
+                watchlater: state.watchlater.filter(video => video.id !== id)
             }
         default:
             return state
     }
 }
 
-export const addTodo = (payload) => {
+export const addToWatchList = (id,array) => {
     return {
-        type: "updateWatchList",
-        payload: payload,
+        type: 'add',
+        payload: array,
+        id: id
     }
 }
 
-export default todo;
+export const removeFromWatchList = (id) => {
+    return {
+        type: 'remove',
+        payload: null,
+        id: id
+    }
+}
+
+export default watchlater;
