@@ -30,13 +30,17 @@ function App() {
         })
     },[])
 
+    useEffect(()=> {},[])
+
+
+
   return (
     <div className="App">
       <Router>
         <Header />
         <Switch>
         <Route path="/detilas/:videoId">
-        <div className="App__grid">
+        <div className="App__grid datail123 ">
           <Sidebar />
           <Details />
         </div>

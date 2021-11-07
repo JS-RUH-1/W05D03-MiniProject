@@ -1,22 +1,22 @@
-// const initialState = {
-//     detailes: {},
-//   };
+const initialState = {
+    detailes: {},
+  };
   
-//   const detailes = (state = initialState, { type, payload }) => {
-//     switch (type) {
-//       case "ADD.DETAILS":
-//         return { detailes: payload };
-//       default:
-//         return state;
-//     }
-//   };
+  const detailes = (state = initialState, { type, payload }) => {
+    switch (type) {
+      case "ADD.DETAILS":
+        return { detailes: payload };
+      default:
+        return state;
+    }
+  };
   
-//   export default detailes;
+  export default detailes;
   
-//   export const addDetailes = (payload) => {
-//     return {
-//       type: "ADD.DETAILS",
-//       payload: payload,
-//     };
-//   };
+  export const addDetailes = (payload) => {
+    return {
+      type: "ADD.DETAILS",
+      payload: payload,
+    };
+  };
   
