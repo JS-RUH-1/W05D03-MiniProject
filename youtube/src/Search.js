@@ -30,7 +30,7 @@ function Search (){
 
  return(
 
-    <div>
+    <div className = "style">
 
     <div class="container-fluid">
     <div class="row mt-5 justify-content-md-center">
@@ -43,8 +43,7 @@ function Search (){
                             <h6 class="video-title">{e.snippet.title}</h6>
                             <small>{e.snippet.channelTitle} . {e.snippet.publishedAt}</small>
                             <br></br>
-                            <small class="text-muted">1 Month ago </small>
-                            <button onClick= {(e)=> {dispatch(addvidWatchlater(e))}}>Add To Watch Laeter</button>
+                            <button className = "btn" onClick= {(e)=> {dispatch(addvidWatchlater(e))}}>Add To Watch Laeter</button>
                         </div>
                     )
                 }
@@ -59,28 +58,3 @@ function Search (){
  )}
 export default Search;
 
-/*{
-
-    state.searchArr.map((e)=> {
-    return(
-        <div>
-    <img src={e.snippet.thumbnails.medium.url}></img>
-    <h3>{e.snippet.title}<br/></h3> 
-    <p>{e.snippet.channelTitle} . {e.snippet.publishedAt}</p>
-        </div>)})
-
-        state.searchArray.map(
-                (element) => {
-                    return (
-                        <div class="col video-grid mt-3" id={element.id}>
-                            <img src={element.snippet.thumbnails.medium.url} width={270} height={150}></img>
-                            <h6 class="video-title">{element.snippet.title}</h6>
-                            <small>{element.snippet.channelTitle}</small>
-                            <br></br>
-                            <small class="text-muted">1 Month ago </small>
-                        </div>
-                    )
-                }
-            )
-
-}*/

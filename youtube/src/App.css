@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
 .App-logo {
@@ -42,10 +44,30 @@
   grid-template-columns: 1fr 1fr 1fr;
   padding: 20px;
   margin: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
 
 .d-flex {
 
   text-align: right;
+}
+
+h3 {
+  font-size: 15px;
+
+}
+p {
+  font-size: 12px;
+}
+
+.btn {
+
+  background-color: black;
+  color: white;
+  font-size: 10px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
 }

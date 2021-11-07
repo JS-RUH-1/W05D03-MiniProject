@@ -12,8 +12,8 @@ function WatchLater() {
  
 
   return (
-    <div>
-    {console.log(state.watchvid)};
+    <div className= "style">
+    {console.log(state.watchvid)}
       {state.watchvid.length ? (state.watchvid?.map((e) => 
       (
           <div><iframe title={e.snippet.title} src={`https://www.youtube.com/embed/${e.id.videoId}`}></iframe>
@@ -22,7 +22,7 @@ function WatchLater() {
                 <h4>{e.snippet.title}</h4>
                 <p>{e.snippet.channelTitle}</p>
                 <p>{e.snippet.publishedAt}</p>
-                <button onClick={() => dispatch(removevidWatchlater(e))}>Remove</button>
+                <button className = "btn" onClick={() => dispatch(removevidWatchlater(e))}>Remove</button>
             </div>
             
           </div>

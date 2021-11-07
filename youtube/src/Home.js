@@ -43,7 +43,7 @@ function Home(){
               <p>{e.snippet.channelTitle} . {e.snippet.publishedAt}</p>
               
                 </Link>
-                <button onClick= {()=> {dispatch(addvidWatchlater(e))}}>Add To Watch Laeter</button>
+                <button className = "btn" onClick= {()=> {dispatch(addvidWatchlater(e))}}>Watch Laeter</button>
 </div>)}
             )
         }
