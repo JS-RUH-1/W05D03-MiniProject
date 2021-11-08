@@ -14,7 +14,8 @@ function Search() {
   useEffect(() => {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${videoSearch}&key=AIzaSyAq7aCKZ9Mmh-hkA4Svq2KlZ-F1Ru1XEDI`
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${videoSearch}&key=`
+        // AIzaSyAq7aCKZ9Mmh-hkA4Svq2KlZ-F1Ru1XEDI
       )
       
 
