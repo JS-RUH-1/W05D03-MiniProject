@@ -2,8 +2,10 @@ import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import axios from 'axios'
 import { addVideo } from './reducers/whatchLater/whatchLater'
+import { useParams } from 'react-router-dom'
 
-export default function Content(props) {
+export default function Content() {
+    const { id } = useParams();
     const [display, setDisplay] = React.useState({description:'', title: '', channelTitle: ''})
     const [whatchLater, setWhatchLater] = React.useState({})
     const [show, setShow] = React.useState(true)
@@ -12,14 +14,14 @@ export default function Content(props) {
     const APIKEY = 'AIzaSyBHrvObxnzBUWoXsVNKH0DrEC1msazCcEg'
 
 
-          React.useEffect(() => {
-             console.log(props.video)
-          }, [props.video]);
+        //   React.useEffect(() => {
+        //      console.log(id)
+        //   }, [id]);
         
 
       React.useEffect(() => {
         axios
-          .get(` https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${props.video}&key=${APIKEY}`)
+          .get(` https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&key=${APIKEY}`)
           .then((res) => {
             setDisplay({
                 description: res.data.items[0].snippet.description,
@@ -31,14 +33,14 @@ export default function Content(props) {
           .catch((err) => {
             console.log(err);
           });
-      }, [props.video]);
+      }, [id]);
 
 
     return (
         <div>
             <div className="clip-content">
             <iframe width="950" height='550'  
-            src={`https://www.youtube.com/embed/${props.video}`}>
+            src={`https://www.youtube.com/embed/${id}`}>
             </iframe>
             {/* <img width="950" height='600'  src={display.snippet.thumbnails.default.url}/> */}
             <div className='section'>

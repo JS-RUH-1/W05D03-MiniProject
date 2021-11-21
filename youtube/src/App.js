@@ -7,6 +7,7 @@ import Content from './content';
 import SideBar from './sideBar';
 import { useDispatch, useSelector } from "react-redux";
 import { addPopular } from './reducers/popular/popular'
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 
 function App() {
   const query = 'react.js'
@@ -43,13 +44,17 @@ function App() {
   // }, []);
 
   return (
+    <Router>
     <div className="App">
       <Nav setVideo={setVideo}/>
       <div className='container'>  
         <SideBar setVideo={setVideo}/>
-        <Content video={video}/>
+        <Routes> 
+           <Route path="/:id" element={<Content video={video}  />}/>
+        </Routes>
       </div>
     </div>
+    </Router>
   );
 }
 

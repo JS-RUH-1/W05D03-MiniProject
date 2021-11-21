@@ -4,9 +4,9 @@ export default function Ads() {
     return (
         <div>
              <div className='adds'>
-                <div className='adds-img'></div>
+               <a href='https://www.linkedin.com/in/masha-al-dossari/'> <div className='adds-img'></div></a>
                 <div className='adds-info space'>
-                    <a href={'https://ghadah.journoportfolio.com/'}>VISIT NOW</a>
+                    <a className='a-button' href={'https://ghadah.journoportfolio.com/'}>VISIT NOW</a>
                     <div className='adds-info'>
                         <div>
                             <h4>Ghadah's portfolio</h4>

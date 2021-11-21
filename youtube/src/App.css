@@ -187,7 +187,7 @@ h1, h2, h5, p{
   border-radius: 2px;
   margin-left: 5px;
 }
-.adds a{
+.a-button{
   background-color: #065fd4;
   color: white;
   text-decoration: none;
@@ -227,4 +227,14 @@ h1, h2, h5, p{
 }
 .watch-div-second{
   margin-right: 15px;
+}
+#delete{
+  display: none;
+}
+.clip-info:hover > #delete {
+  display: block;
+}
+a{
+  text-decoration: none;
+  color: inherit;
 }
