@@ -18,17 +18,7 @@ export default function App() {
   const[data,setData]=useState([])
 
 
-  // const state =useSelector((state) => {
-
-  //   return {
-  //     disYout:state.YoutReducer.yout,
-  //     count :state.YoutReducer.count
-  //   }
-  // })
-
-  // const dispatch=useDispatch()
-
-
+  
   return (
      <>
 

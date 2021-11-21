@@ -7,6 +7,7 @@ import './App.css';
 import {watchLater,remove} from './Reducers/YoutReducer';
  
 // import WatchLaterIcon from '@mui/icons-material/WatchLater';
+
  import {useSelector, useDispatch} from 'react-redux';
  
 
@@ -41,22 +42,6 @@ import {watchLater,remove} from './Reducers/YoutReducer';
            name:'sara'
        }
    ])
-   
-    
-    // const FetchAPI=()=>{
-
-    // fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&chart=mostPopular&key=AIzaSyAAIr9iYdLDg_MhJCvpWjZaov5Jm0bRS7I')
-    //     .then((res)=> res.json())
-    //     .then((json)=>{ console.log(json.items)
-    //        setData(json.items)
-    //     })
-    //     }
-
-
-        //useEffect print all function insaid the useEffect when i update the page without click the button   
-
-
-
 // /That is for youtube 
 
     useEffect(()=>{
@@ -136,6 +121,7 @@ import {watchLater,remove} from './Reducers/YoutReducer';
 
     {/* Data.items?((elm)) ....>another ways */}
 {/* Display all vidoe into UI */}
+
         {Data.map((elm) => (
              
             <div className='SmallBox' key={elm.id}>
@@ -148,7 +134,12 @@ import {watchLater,remove} from './Reducers/YoutReducer';
         <div> <small className='TitleOfVidoe'>{elm.snippet.title}</small></div>
              <br/>
              <div className='image'>
+
             {/* <button  onClick = {()=>((dispatch(watchLater(elm))) )}>Watch Later</button> */}
+           
+ {/* <WatchLaterIcon  /> */}
+            
+           
             <button className='LaterBtn' > 
             <img   onClick = {()=>((dispatch(watchLater(elm))) )}
                src="https://img.icons8.com/color/30/000000/star--v1.png" alt=''/>
